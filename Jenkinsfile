@@ -20,7 +20,7 @@ agent {
             }
         }
         
-    stage('SonarQube Analysis') {
+    stage('static scan analysis') {
       environment {
         SCANNER_HOME = tool 'sonarqube1'
         ORGANIZATION = "sonarqube-job1"
