@@ -20,6 +20,14 @@ agent {
             }
         }
         
+        stage('Build') {
+            steps {
+                sh 'mvn clean package'
+            }
+            
+        }
+        
+        
     stage('static scan analysis') {
       environment {
         SCANNER_HOME = tool 'sonarqube1'
@@ -44,12 +52,6 @@ agent {
 
         
 
-        stage('Build') {
-            steps {
-                sh 'mvn clean package'
-            }
-            
-        }
         
         stage('Stage 2') {
             steps {
