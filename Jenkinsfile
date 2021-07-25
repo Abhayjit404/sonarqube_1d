@@ -23,12 +23,12 @@ agent {
         
     stage('static scan analysis') {
       environment {
-        SCANNER_HOME = tool 'sonarqube1'
+        SCANNER_HOME = tool 'Sonar'
         ORGANIZATION = "sonarqube-job1"
         PROJECT_NAME = "sonarqube-job1"
       }
       steps {
-        withSonarQubeEnv('sonarqube') {
+        withSonarQubeEnv('Sonarqube') {
             sh '''$SCANNER_HOME/bin/sonar-scanner -Dsonar.organization=$ORGANIZATION \
             -Dsonar.projectKey=$PROJECT_NAME \
             -Dsonar.sources=.'''
