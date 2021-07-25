@@ -20,13 +20,6 @@ agent {
             }
         }
         
-        stage('Build') {
-            steps {
-                sh 'mvn clean package'
-            }
-            
-        }
-        
         
     stage('static scan analysis') {
       environment {
@@ -50,6 +43,13 @@ agent {
          }
        }
 
+        stage('Build') {
+            steps {
+                sh 'mvn clean package'
+            }
+            
+        }
+        
         
 
         
